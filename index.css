@@ -23,7 +23,7 @@ body {
     max-height: 20%;
     margin: auto;
 }
-input[type="password"] {
+input[type="clue"] {
     width: 70%;
     padding: 10px;
     margin: 10px 0;
@@ -31,13 +31,6 @@ input[type="password"] {
     border-radius: 3px;
 }
 
-input[type="clue"] {
-    width: 20%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
 
 button {
     background-color: #4CAF50;

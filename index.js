@@ -1,16 +1,15 @@
 
 
-const cluePasswords = ["00", "11", "22", "33", "44", "55", "66"];
-
-
+const cluePasswords = ["password", "phishing", "ransomware", "firewall", "mitma", "database"];
 
 
 function checkPassword() {
     const clueInput = document.getElementById("clueNumber");
     const passwordInput = document.getElementById("password");
-    const correctPassword = cluePasswords[clueInput.value];
+    const correctPassword = cluePasswords[clueInput.value - 1];
+    
 
-    if (passwordInput.value === correctPassword) {
+    if (passwordInput.value.toLowerCase() === correctPassword.toLowerCase()) {
         document.getElementById("message").textContent = "Access granted!";
         document.getElementById("error-message").textContent = "";
         window.location.href = "results.html";
@@ -20,9 +19,11 @@ function checkPassword() {
         const errorMessage = document.getElementById("error-message");
         showTextBySeconds(errorMessage, "Incorrect password", 1);
         passwordInput.value = "";
+        clueInput.value = "";
     }
-}
 
+    const nextClueNumber = (clueInput.value + 1) % cluePasswords.length;
+}
 function showTextBySeconds(textElement, text, second) {
     textElement.textContent = text;
     setTimeout(() => {
