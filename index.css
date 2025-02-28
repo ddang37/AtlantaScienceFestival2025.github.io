@@ -4,14 +4,24 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f0f0;
+    background-color: lightyellow;
 }
-.container {
+#heading {
+    text-align: center;
+    color: darkblue;
+
+}
+
+.userInput {
     background-color: #fff;
     padding: 30px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
+    margin-top: auto;
+    max-width: 30%;
+    max-height: 20%;
+    margin: auto;
 }
 input[type="password"] {
     width: 70%;
@@ -20,6 +30,15 @@ input[type="password"] {
     border: 1px solid #ccc;
     border-radius: 3px;
 }
+
+input[type="clue"] {
+    width: 20%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
 button {
     background-color: #4CAF50;
     color: white;
