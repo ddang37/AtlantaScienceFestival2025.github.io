@@ -21,8 +21,6 @@ function checkPassword() {
         passwordInput.value = "";
         clueInput.value = "";
     }
-
-    const nextClueNumber = (clueInput.value + 1) % cluePasswords.length;
 }
 function showTextBySeconds(textElement, text, second) {
     textElement.textContent = text;
