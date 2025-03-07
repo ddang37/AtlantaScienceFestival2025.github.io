@@ -12,7 +12,7 @@ function checkPassword() {
     if (passwordInput.value.toLowerCase() === correctPassword.toLowerCase()) {
         document.getElementById("message").textContent = "Access granted!";
         document.getElementById("error-message").textContent = "";
-        window.location.href = "results.html";
+        window.location.href = "clues.html";
     } else {
         document.getElementById("message").textContent = "";
         //document.getElementById("error-message").textContent = "Incorrect password";
