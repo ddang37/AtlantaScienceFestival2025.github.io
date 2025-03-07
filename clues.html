@@ -1,29 +1,88 @@
 <html>
     <head>
-        <title>HERE IS THE CLUE!</title>
+        <title>HERE IS THE NEXT CLUE!</title>
         <link rel="stylesheet" type="text/css" href="./index.css">
         <script src="./index.js"></script>
         
     </head>
     <body>
         <div class="container">
-            <h1> GOOD JOB! </h1>
-            <div id="direction">
-                
-                <p> Here is the direction / location of the next clue:</p>
+            <h1 id="clue_heading">Here is your practice clue: 0</h1>
+            <div class="box">
+                <p id="location"> Please go back and enter the password for the clue if you see the Gatech bees. If you need help please seek out a CyberQuest staff. Have fun!</p>
             </div>
             <h1>Look around</h1>
             <div class="images_list">
-                <img src="./images/bee.png" alt="this is beeeee">
-                <img src="./images/bee.png" alt="this is beeeee">
-                <img src="./images/bee.png" alt="this is beeeee">
+                <img id="1" src="./images/bee.png" alt="this is beeeee">
+                <img id="2" src="./images/bee.png" alt="this is beeeee">
+                <img id="3" src="./images/bee.png" alt="this is beeeee">
             </div>
             <div class="images_list">
-                <img src="./images/bee.png" alt="this is beeeee">
-                <img src="./images/bee.png" alt="this is beeeee">
-                <img src="./images/bee.png" alt="this is beeeee">
+                <img id="4" src="./images/bee.png" alt="this is beeeee">
+                <img id="5" src="./images/bee.png" alt="this is beeeee">
+                <img id="6" src="./images/bee.png" alt="this is beeeee">
             </div>
+            <button id="homeButton" onclick="goHome()">HOME</button>
         </div>
+
+        <script>
+            function getQueryParam(param) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
+            }
+
+            const cluePasswords = ["atlanta", "password", "phishing", "ransomware", "firewall", "mitma", "database"];
+            const clueValue = getQueryParam('clue');
+            const clueNumber = Number(clueValue);
+            
+            let nextclue = (clueNumber + 1) % cluePasswords.length;
+            if (clueNumber === 0) {
+                nextclue = 0;
+            } else if (nextclue === 0) {
+                nextclue = 1;
+            } 
+            document.getElementById("clue_heading").textContent = "Here is your next clue: " + nextclue;
+
+            let clueLocation;
+            let imageArray = [];
+
+            switch(nextclue) {
+                case 1: 
+                    clueLocation = "Yooo1   Please go back and enter the password for the clue if you see the Gatech bees. If you need help please seek out a CyberQuest staff. Have fun!";
+                    imageArray = ["./images/buzz.jpg", "./images/bee.png", "./images/bee.png", "./images/bee.png", "./images/bee.png", "./images/bee.png"];
+                    break;
+                case 2:
+                    clueLocation = "Yooo2   Please go back and enter the password for the clue if you see the Gatech bees. If you need help please seek out a CyberQuest staff. Have fun!";
+                    imageArray = ["./images/bee.png", "./images/buzz.jpg", "./images/bee.png", "./images/bee.png", "./images/bee.png", "./images/bee.png"];
+                    break;
+                case 3:
+                    clueLocation = "Yooo3 Please go back and enter the password for the clue if you see the Gatech bees. If you need help please seek out a CyberQuest staff. Have fun!";
+                    imageArray = ["./images/bee.png", "./images/bee.png", "./images/buzz.jpg", "./images/bee.png", "./images/bee.png", "./images/bee.png"];
+                    break;
+                case 4:
+                    clueLocation = "Yooo4 Please go back and enter the password for the clue if you see the Gatech bees. If you need help please seek out a CyberQuest staff. Have fun!";
+                    imageArray = ["./images/bee.png", "./images/bee.png", "./images/bee.png", "./images/buzz.jpg", "./images/bee.png", "./images/bee.png"];
+                    break;
+                case 5:
+                    clueLocation = "Yooo5 Please go back and enter the password for the clue if you see the Gatech bees. If you need help please seek out a CyberQuest staff. Have fun!";
+                    imageArray = ["./images/bee.png", "./images/bee.png", "./images/bee.png", "./images/bee.png", "./images/buzz.jpg", "./images/bee.png"];
+                    break;
+                case 6:
+                    clueLocation = "Yooo6 Please go back and enter the password for the clue if you see the Gatech bees. If you need help please seek out a CyberQuest staff. Have fun!";
+                    imageArray = ["./images/bee.png", "./images/bee.png", "./images/bee.png", "./images/bee.png", "./images/bee.png", "./images/buzz.jpg"];
+                    break;
+                default:
+                    clueLocation = "default 0 Please go back and enter the password for the clue if you see the Gatech bees. If you need help please seek out a CyberQuest staff. Have fun!";
+                    imageArray = ["./images/bee.png", "./images/bee.png", "./images/bee.png", "./images/bee.png", "./images/bee.png", "./images/bee.png"];
+                    break;
+            }
+
+            document.getElementById("location").textContent = clueLocation;
+            for (let i = 0; i < cluePasswords.length; i++) {
+                document.getElementById(i + 1).src = imageArray[i];
+            }
+
+        </script>
         
     </body>
 </html>
