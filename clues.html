@@ -9,9 +9,9 @@
         <div class="container">
             <h1 id="clue_heading">Here is your practice clue: 0</h1>
             <div class="box">
-                <p id="location"> If you see all Gatech bees, please go back and try again. If you need help please seek out a CyberQuest staff. Have fun!</p>
+                <p id="location"> If you see too many Gatech bees, please go back and try again.</p>
             </div>
-            <h4>Go back to homepage, try your anwser, and save the password. If you need help please seek out a CyberQuest staff. Have fun!</h4>
+            <h4>Go back to homepage, try your answer, and save the password. If you need help or finished all 6 clues, seek out a CyberQuest staff. Have fun!</h4>
             <h1>Look around</h1>
             <div class="images_list">
                 <img id="1" src="./images/bee.png" alt="this is beeeee">
@@ -29,6 +29,12 @@
         <script>
             function getQueryParam(param) {
                 const urlParams = new URLSearchParams(window.location.search);
+                const paramCount = urlParams.toString().split('&').length;
+                if (paramCount > 2) {
+                    alert("Nice try with length extension attack ^^.");
+                    goHome();
+                }
+
                 return urlParams.get(param);
             }
 
@@ -47,39 +53,40 @@
                 nextclue = 0;
             } else if (nextclue === 0) {
                 nextclue = 1;
-            } 
-            document.getElementById("clue_heading").textContent = "Here is your next clue: " + nextclue;
+            }
+
+            (nextclue == 0) ? document.getElementById("clue_heading").textContent = "Here is your next clue: any": document.getElementById("clue_heading").textContent = "Here is your next clue: " + nextclue;
 
             let clueLocation;
             let imageArray = [];
 
             switch(nextclue) {
                 case 1: 
-                    clueLocation = "This clue is on the same floor as the CyberQuest room. Georgia Tech has a lot of opportunities for students. You can find multiple bulletin boards along your way. The clue is buried on one of them.";
-                    imageArray = ["./images/buzz.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg"];
+                    clueLocation = "This clue is on the same floor as the CyberQuest room. Georgia Tech has a lot of opportunities for students. You can find multiple bulletin boards along your way. The clue is buried on one of them. Hint: it is close to rooms 1443 and 1456.";
+                    imageArray = ["clue1/pic1.jpg", "clue1/pic2.jpg", "clue1/pic3.jpg", "clue1/pic4.jpg", "clue1/pic5.jpg", "clue1/pic6.jpg"];
                     break;
                 case 2:
-                    clueLocation = "Yooo2   Please go back and enter the password for the clue if you see the Gatech bees.";
-                    imageArray = ["clue0/pic1.jpg", "./images/buzz.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg"];
+                    clueLocation = "This clue is on the second floor. It's on the side of the Exit sign. Whether you want to study alone, admire the weather, or taking a nap, this is the best place in case of emergency. Hint: near room 2456, find the pattern.";
+                    imageArray = ["clue2/pic1.jpg", "clue2/pic2.jpg", "clue2/pic3.jpg", "clue2/pic4.jpg", "clue2/pic5.jpg", "clue2/pic6.jpg"];
                     break;
                 case 3:
-                    clueLocation = "Yooo3 Please go back and enter the password for the clue if you see the Gatech bees.";
-                    imageArray = ["clue0/pic1.jpg", "clue0/pic1.jpg", "./images/buzz.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg"];
+                    clueLocation = "Georgia Tech has a recycle program where students and staffs contribute by sorting trashes for recycling. If you just finished drinking a bottle of water, which category you should put it in? Hint: this is near room 2443.";
+                    imageArray = ["clue3/pic1.jpg", "clue3/pic2.jpg", "clue3/pic3.jpg", "clue3/pic4.jpg", "clue3/pic5.jpg", "clue3/pic6.jpg"];
                     break;
                 case 4:
                     clueLocation = "Yooo4 Please go back and enter the password for the clue if you see the Gatech bees.";
-                    imageArray = ["clue0/pic1.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg", "./images/buzz.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg"];
+                    imageArray = ["clue0/pic1.jpg", "clue0/pic2.jpg", "clue0/pic3.jpg", "clue0/pic4.jpg", "clue0/pic5.jpg", "clue0/pic6.jpg"];
                     break;
                 case 5:
                     clueLocation = "Yooo5 Please go back and enter the password for the clue if you see the Gatech bees.";
-                    imageArray = ["clue0/pic1.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg", "./images/buzz.jpg", "clue0/pic1.jpg"];
+                    imageArray = ["clue0/pic1.jpg", "clue0/pic2.jpg", "clue0/pic3.jpg", "clue0/pic4.jpg", "clue0/pic5.jpg", "clue0/pic6.jpg"];
                     break;
                 case 6:
                     clueLocation = "Yooo6 Please go back and enter the password for the clue if you see the Gatech bees.";
-                    imageArray = ["clue0/pic1.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg", "./images/buzz.jpg"];
+                    imageArray = ["clue0/pic1.jpg", "clue0/pic2.jpg", "clue0/pic3.jpg", "clue0/pic4.jpg", "clue0/pic5.jpg", "clue0/pic6.jpg"];
                     break;
                 default:
-                    clueLocation = "CyberQuest is located at room 1440. The game is strictly within the classroom wing, which only includes #4## rooms. Pick a clue and proceed your scavenger hunt on 3 different floors! You only know hints of next clue's location after enter the right password of the current one. There are 6 clues along the way.";
+                    clueLocation = "CyberQuest is located at room 1440 on the first floor. The game is strictly within the classroom wing, which only includes x4xx rooms. Pick any clue with the staff and proceed your scavenger hunt on 3 different floors! You only know hints of next clue's location after enter the right password of the current one. There are 6 clues along the way.";
                     imageArray = ["clue0/pic1.jpg", "clue0/pic2.jpg", "clue0/pic3.jpg", "clue0/pic4.jpg", "clue0/pic5.jpg", "clue0/pic6.jpg"];
                     break;
             }

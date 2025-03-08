@@ -5,6 +5,7 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: lightyellow;
+    
 }
 
 
@@ -25,6 +26,7 @@ h1 {
 
 p {
     text-align: center;
+    font-size: 20px;
     color: rgb(179, 163, 105, 1);
 }
 
@@ -76,7 +78,7 @@ input[type="number"] {
 #homeButton {
     background-color: darkblue;
     color: white;
-    padding: 30px 50;
+    padding: 30px 50px;
     border: none;
     border-radius: 3px;
     cursor: pointer;
@@ -104,3 +106,28 @@ img {
     align-items: center;
     text-align: center;
 }
+
+/* .images_list {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+img {
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    height: auto; 
+    align-items: center;
+    text-align: center;
+    border: 2px double black;
+    padding: 30px;
+    box-sizing: border-box;
+} */
