@@ -9,8 +9,9 @@
         <div class="container">
             <h1 id="clue_heading">Here is your practice clue: 0</h1>
             <div class="box">
-                <p id="location"> Please go back and enter the password for the clue if you see the Gatech bees. If you need help please seek out a CyberQuest staff. Have fun!</p>
+                <p id="location"> If you see all Gatech bees, please go back and try again. If you need help please seek out a CyberQuest staff. Have fun!</p>
             </div>
+            <h4>Go back to homepage, try your anwser, and save the password. If you need help please seek out a CyberQuest staff. Have fun!</h4>
             <h1>Look around</h1>
             <div class="images_list">
                 <img id="1" src="./images/bee.png" alt="this is beeeee">
@@ -31,10 +32,16 @@
                 return urlParams.get(param);
             }
 
-            const cluePasswords = ["atlanta", "password", "phishing", "ransomware", "firewall", "mitma", "database"];
             const clueValue = getQueryParam('clue');
+            const passValue = getQueryParam('pass');
             const clueNumber = Number(clueValue);
+
             
+            if (!(cluePasswords[clueNumber].toLowerCase() === passValue.toLowerCase())) {
+                alert("Don't crack this game, please =(( please try again.");
+                goHome();
+            }
+          
             let nextclue = (clueNumber + 1) % cluePasswords.length;
             if (clueNumber === 0) {
                 nextclue = 0;
@@ -48,38 +55,38 @@
 
             switch(nextclue) {
                 case 1: 
-                    clueLocation = "Yooo1   Please go back and enter the password for the clue if you see the Gatech bees. If you need help please seek out a CyberQuest staff. Have fun!";
-                    imageArray = ["./images/buzz.jpg", "./images/bee.png", "./images/bee.png", "./images/bee.png", "./images/bee.png", "./images/bee.png"];
+                    clueLocation = "This clue is on the same floor as the CyberQuest room. Georgia Tech has a lot of opportunities for students. You can find multiple bulletin boards along your way. The clue is buried on one of them.";
+                    imageArray = ["./images/buzz.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg"];
                     break;
                 case 2:
-                    clueLocation = "Yooo2   Please go back and enter the password for the clue if you see the Gatech bees. If you need help please seek out a CyberQuest staff. Have fun!";
-                    imageArray = ["./images/bee.png", "./images/buzz.jpg", "./images/bee.png", "./images/bee.png", "./images/bee.png", "./images/bee.png"];
+                    clueLocation = "Yooo2   Please go back and enter the password for the clue if you see the Gatech bees.";
+                    imageArray = ["clue0/pic1.jpg", "./images/buzz.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg"];
                     break;
                 case 3:
-                    clueLocation = "Yooo3 Please go back and enter the password for the clue if you see the Gatech bees. If you need help please seek out a CyberQuest staff. Have fun!";
-                    imageArray = ["./images/bee.png", "./images/bee.png", "./images/buzz.jpg", "./images/bee.png", "./images/bee.png", "./images/bee.png"];
+                    clueLocation = "Yooo3 Please go back and enter the password for the clue if you see the Gatech bees.";
+                    imageArray = ["clue0/pic1.jpg", "clue0/pic1.jpg", "./images/buzz.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg"];
                     break;
                 case 4:
-                    clueLocation = "Yooo4 Please go back and enter the password for the clue if you see the Gatech bees. If you need help please seek out a CyberQuest staff. Have fun!";
-                    imageArray = ["./images/bee.png", "./images/bee.png", "./images/bee.png", "./images/buzz.jpg", "./images/bee.png", "./images/bee.png"];
+                    clueLocation = "Yooo4 Please go back and enter the password for the clue if you see the Gatech bees.";
+                    imageArray = ["clue0/pic1.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg", "./images/buzz.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg"];
                     break;
                 case 5:
-                    clueLocation = "Yooo5 Please go back and enter the password for the clue if you see the Gatech bees. If you need help please seek out a CyberQuest staff. Have fun!";
-                    imageArray = ["./images/bee.png", "./images/bee.png", "./images/bee.png", "./images/bee.png", "./images/buzz.jpg", "./images/bee.png"];
+                    clueLocation = "Yooo5 Please go back and enter the password for the clue if you see the Gatech bees.";
+                    imageArray = ["clue0/pic1.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg", "./images/buzz.jpg", "clue0/pic1.jpg"];
                     break;
                 case 6:
-                    clueLocation = "Yooo6 Please go back and enter the password for the clue if you see the Gatech bees. If you need help please seek out a CyberQuest staff. Have fun!";
-                    imageArray = ["./images/bee.png", "./images/bee.png", "./images/bee.png", "./images/bee.png", "./images/bee.png", "./images/buzz.jpg"];
+                    clueLocation = "Yooo6 Please go back and enter the password for the clue if you see the Gatech bees.";
+                    imageArray = ["clue0/pic1.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg", "clue0/pic1.jpg", "./images/buzz.jpg"];
                     break;
                 default:
-                    clueLocation = "default 0 Please go back and enter the password for the clue if you see the Gatech bees. If you need help please seek out a CyberQuest staff. Have fun!";
-                    imageArray = ["./images/bee.png", "./images/bee.png", "./images/bee.png", "./images/bee.png", "./images/bee.png", "./images/bee.png"];
+                    clueLocation = "CyberQuest is located at room 1440. The game is strictly within the classroom wing, which only includes #4## rooms. Pick a clue and proceed your scavenger hunt on 3 different floors! You only know hints of next clue's location after enter the right password of the current one. There are 6 clues along the way.";
+                    imageArray = ["clue0/pic1.jpg", "clue0/pic2.jpg", "clue0/pic3.jpg", "clue0/pic4.jpg", "clue0/pic5.jpg", "clue0/pic6.jpg"];
                     break;
             }
 
             document.getElementById("location").textContent = clueLocation;
             for (let i = 0; i < cluePasswords.length; i++) {
-                document.getElementById(i + 1).src = imageArray[i];
+                document.getElementById(i + 1).src = "./images/" + imageArray[i];
             }
 
         </script>

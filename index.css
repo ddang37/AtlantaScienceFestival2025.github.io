@@ -40,7 +40,14 @@ p {
     max-height: 20%;
     margin: auto;
 }
-input[type="clue"] {
+input[type="password"] {
+    width: 70%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+input[type="number"] {
     width: 70%;
     padding: 10px;
     margin: 10px 0;
